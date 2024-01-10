@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta
+			name="description"
+			content="An age calculator is a tool that calculates the precise duration you've been alive in terms of years, months, and days. "
+		/>
+		<!-- SCSS -->
+		<link rel="stylesheet" href="./scss/main.scss" />
+		<!-- SCRIPT -->
+		<script defer type="module" src="./js/script.js"></script>
+		<title>Age Calculator</title>
+	</head>
+	<body>
+		<main>
+			<div class="calc">
+				<h1 class="calc__heading-primary">Age Calculator</h1>
+				<div class="calc__container">
+					<form action="#" class="calc__form">
+						<div class="calc__date-of-birth-container">
+							<label for="date-of-birth" class="calc__date-of-birth"
+								>Your Date of Birth</label
+							>
+							<input
+								type="date"
+								id="date-of-birth"
+								class="calc__date-of-birth-input"
+							/>
+						</div>
+						<button type="submit" class="calc__submit-btn">
+							Calculate my age
+						</button>
+					</form>
+				</div>
+				<div class="calc__results">
+					<h2 class="calc__results-heading-secondary">
+						You are (Your age right now)
+					</h2>
+					<div class="calc__results-container">
+						<div class="calc__results-y">
+							<p class="years"></p>
+							<span class="year-tag"></span>
+						</div>
+						<div class="calc__results-m">
+							<p class="months"></p>
+							<span class="month-tag"></span>
+						</div>
+						<div class="calc__results-d">
+							<p class="days"></p>
+							<span class="day-tag"></span>
+						</div>
+					</div>
+					<button class="calc__submit-btn calc-again">Calculate again</button>
+				</div>
+			</div>
+			<div class="credits">
+				&copy; <a href="https://github.com/quielLovesLasagna">Exequiel</a>
+			</div>
+		</main>
+	</body>
+</html>

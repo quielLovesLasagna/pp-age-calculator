@@ -1,0 +1,178 @@
+@use "./abstracts" as abs;
+
+*,
+*::before,
+*::after {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+html {
+	font-size: 62.5%;
+}
+
+body {
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-family: abs.$ff-poppins;
+	font-size: abs.$fs-1-6;
+	color: abs.$cl-white;
+}
+
+.calc {
+	background-color: abs.$cl-blue;
+	padding: 2rem;
+	border-radius: 1.5rem;
+	width: 40rem;
+	height: 26rem;
+	position: relative;
+
+	@media only screen and (max-width: 25em) {
+		width: 33rem;
+	}
+
+	&__heading-primary {
+		text-align: center;
+		margin-bottom: 2rem;
+	}
+
+	&__date-of-birth-container {
+		display: grid;
+		gap: 0.5rem;
+	}
+
+	&__date-of-birth {
+		font-weight: abs.$fw-small;
+	}
+
+	&__date-of-birth-input {
+		cursor: pointer;
+		padding: 1.5rem 2rem;
+		border: none;
+		border-radius: 0.8rem;
+		font-size: abs.$fs-1-4;
+		font-family: inherit;
+		font-weight: abs.$fw-small;
+		margin-bottom: 2rem;
+
+		&:focus {
+			outline-color: abs.$cl-light-blue;
+		}
+	}
+
+	&__submit-btn {
+		cursor: pointer;
+		width: 100%;
+		font-size: inherit;
+		font-family: inherit;
+		padding: 1rem 2rem;
+		border-radius: 0.8rem;
+		border: 2px solid abs.$cl-lavender;
+		background-color: abs.$cl-lavender;
+		font-weight: abs.$fw-small;
+		color: inherit;
+		@include abs.transitionAll;
+
+		&:hover {
+			color: abs.$cl-lavender;
+			border-color: abs.$cl-lavender;
+			background-color: abs.$cl-white;
+		}
+	}
+
+	&__results {
+		background-color: abs.$cl-white;
+		padding: 3rem;
+		border-radius: 1.5rem;
+		width: 40rem;
+		height: 26rem;
+		position: absolute;
+		top: 0;
+		left: 0;
+		box-shadow: 0 1rem 3rem rgba(abs.$cl-black, 0.2);
+		opacity: 0;
+		visibility: hidden;
+		pointer-events: none;
+		@include abs.transitionAll;
+
+		@media only screen and (max-width: 25em) {
+			width: 33rem;
+		}
+
+		&-heading-secondary {
+			color: abs.$cl-black;
+			font-size: abs.$fs-1-8;
+			text-align: center;
+			margin-bottom: 2rem;
+		}
+
+		&-container {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			gap: 2rem;
+			margin-bottom: 2rem;
+		}
+
+		&-y,
+		&-m,
+		&-d {
+			padding: 1rem 2rem;
+			width: 8rem;
+			aspect-ratio: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			border-radius: 0.8rem;
+			font-weight: abs.$fw-medium;
+			font-size: abs.$fs-2-4;
+
+			span {
+				font-size: abs.$fs-1-6;
+				font-weight: abs.$fw-tiny;
+			}
+		}
+
+		&-y {
+			background-color: abs.$cl-blue;
+		}
+
+		&-m {
+			background-color: abs.$cl-light-green;
+		}
+
+		&-d {
+			background-color: abs.$cl-bright-green;
+		}
+	}
+}
+
+.credits {
+	margin-top: 1rem;
+	text-align: center;
+	padding: 2rem 4rem;
+	color: abs.$cl-black;
+
+	a {
+		font-size: abs.$fs-1-4;
+		text-decoration: none;
+		letter-spacing: 2px;
+		font-weight: abs.$fw-medium;
+		@include abs.transitionAll;
+
+		&:hover {
+			color: abs.$cl-lavender;
+		}
+	}
+}
+
+// SHOW RESULTS
+.show-results {
+	opacity: 1;
+	visibility: visible;
+	pointer-events: auto;
+}

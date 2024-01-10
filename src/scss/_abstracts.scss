@@ -1,0 +1,30 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap");
+
+// COLORS
+$cl-blue: #6470de;
+$cl-light-blue: #8692e6;
+$cl-white: #fff;
+$cl-black: #000;
+$cl-lavender: #bc7ef9;
+$cl-light-green: #ced498;
+$cl-bright-green: #72e2b4;
+$cl-light-grey: #b3b3b3;
+
+// FONT-FAMILY
+$ff-poppins: "Poppins", sans-serif;
+
+// FONT-SIZE
+$fs-1-4: 1.4rem;
+$fs-1-6: 1.6rem;
+$fs-1-8: 1.8rem;
+$fs-2-4: 2.4rem;
+
+// FONT-WEIGHT:
+$fw-tiny: 400;
+$fw-small: 500;
+$fw-medium: 600;
+
+// MIXINS
+@mixin transitionAll {
+	transition: all 0.2s;
+}
